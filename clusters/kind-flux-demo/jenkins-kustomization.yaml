@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./infrastructure/jenkins
+  path: ./clusters/infrastructure/jenkins
   prune: true
   sourceRef:
     kind: GitRepository
