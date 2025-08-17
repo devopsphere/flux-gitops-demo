@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jenkins
+  namespace: jenkins
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: jenkins
+      version: "4.7.2"   # you can check latest from https://artifacthub.io/packages/helm/jenkinsci/jenkins
+      sourceRef:
+        kind: HelmRepository
+        name: jenkins
+        namespace: flux-system
+  install:
+    createNamespace: true
+  values:
+    controller:
+      adminUser: admin
+      adminPassword: admin123
+      serviceType: NodePort
+      servicePort: 32000
