@@ -5,3 +5,4 @@ resources:
 - gotk-sync.yaml
 - ../../jenkins-kustomization.yaml
 - ../../nginx-kustomization.yaml
+- ../../nginx-ingress-controller-kustomization.yaml
